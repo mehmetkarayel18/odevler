@@ -1,1 +1,7 @@
+#1.hafta 2.ödev
+
+isim=input("adınız ve soyadınız:")
+print("*"*20)
+print("**(",isim,")**")
+print(" "*3,"_"*len(isim))
 
