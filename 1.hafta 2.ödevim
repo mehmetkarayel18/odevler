@@ -1,0 +1,6 @@
+#km cinsinden verilen uzunluğu mile çevirmek
+
+km=float(input("kaç km gittiniz?"))
+mil=km/1.609344
+print("O halde, siz,",mil,"mil gittiniz")
+
