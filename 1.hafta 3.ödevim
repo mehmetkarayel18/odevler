@@ -1,0 +1,8 @@
+#ismi girilen kişinin vize final notlarının girilmesi ile notunun hesaplanması
+
+isim=input("Adınız Soyadınız:")
+final=int(input("Final notunuz:"))
+vize=int(input("Vize notunuz:"))
+devms=int(input("Okula kaç gün geldiniz?"))
+notun=(final*0.5)+(vize*0.3)+(devms*5*0.2)
+print("Verdiğiniz bilgilere göre karne notunuz:",notun,"\nBaşarılarınızın devamını dileriz")
