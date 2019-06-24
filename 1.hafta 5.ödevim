@@ -1,0 +1,14 @@
+#aylık gelir gider hesaplama
+
+gelir=int(input("Aylık gelirinizi giriniz: "))
+mutfak=int(input("Aylık mutfak harcamanızı giriniz: "))
+egitim=int(input("Aylık eğitim harcamanızı giriniz: "))
+giyim=int(input("Aylık giyim harcamanızı giriniz: "))
+ulasım=int(input("Aylık ulaşım harcamanızı giriniz: "))
+harcama=egitim+giyim+ulasım+mutfak
+oran=(harcama/gelir)*100
+print("Aylık toplam harcamanız  ",harcama)
+print("Aylık harcamanızın gelirinize oranı (yüzde olarak)",oran)
+dosya=open("C:/Users/Admin/Desktop/PYTHON KURS/aylikmasraf.txt","w")
+print("Aylık toplam harcamanız:",harcama,"\nAylık harcamanızın gelirinize oranı (yüzde olarak) :",oran,file=dosya)
+dosya.close()
