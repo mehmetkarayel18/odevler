@@ -1,0 +1,5 @@
+# girilen yazıyı süsleyerek yazdırma
+isim=input("adınız ve soyadınız:")
+print("*"*20)
+print("**(",isim,")**")
+print(" "*3,"_"*len(isim))
