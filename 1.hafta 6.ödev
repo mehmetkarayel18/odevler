@@ -1,0 +1,3 @@
+print("""Python'un kurucusu Guido Van rossum Hollanda'nın Amsterdam'dak "Universiteit Van Amsterdam" okulundan 1982'de mezun olmuştur""")
+print("Python'un kurucusu Guido Van rossum Hollanda'nın Amsterdam'dak \"Universiteit Van Amsterdam\" okulundan 1982'de mezun olmuştur")
+print('Python\'un kurucusu Guido Van rossum Hollanda\'nın Amsterdam\'daki \"Universiteit Van Amsterdam\" okulundan 1982\'de mezun olmuştur')
