@@ -1,0 +1,16 @@
+#faiz hesaplama programı
+
+apara=float(input("Lütfen ana paranızı giriniz:  "))
+f_oranı=float(input("Lütfen yıllık faiz oranını giriniz:  "))
+süre=float(input("Lütfen kaç yıl süre giriniz:  "))
+sonuç=(apara*f_oranı*süre*0.01)+apara
+faiz=apara*f_oranı*süre*0.01
+dosya=open("C:/Users/Admin/Desktop/faizHesapla.txt","w")
+print("*"*30,"\nVerdiğiniz bilgilere göre")
+yazı="""
+faiz miktarı {}
+toplam miktar {}"""
+print(yazı.format(faiz,sonuç))
+print(yazı.format(faiz,sonuç),file=dosya)
+dosya.close()
+
