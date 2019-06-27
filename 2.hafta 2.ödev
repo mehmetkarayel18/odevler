@@ -1,0 +1,20 @@
+#km mil çift yönlü çeviri
+
+while True:
+    secim=str(input("""km'yi mil'e çevirmek istiyorsanız k tuşuna
+mil'i km'ye çevirmek istiyorsanız m tuşuna
+çıkmak için q tuşuna basınız\n\n"""))
+    if secim=="k" or secim=="m" or secim=="q":
+        if secim=="k":
+            km=float(input("km değerini giriniz  :"))
+            mil=km/1.609344
+            print("Yazdığınız değerin mil karşılığı :",mil,"dir\n\n")
+        if secim=="m":
+            mil=float(input("mil değerini giriniz  :"))
+            km=mil*1.609344
+            print("Yazdığınız değerin km karşılığı :",km,"dir\n\n")
+        if secim=="q":
+            print("sistemden çıkılıyor tekrar görüşmek üzere İYİ GÜNLER")
+            break
+    else:
+        print("***Lütfen sadece belirtilen seçenekleri tuşlayınız***\n\n")
