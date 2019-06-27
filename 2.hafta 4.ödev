@@ -1,0 +1,25 @@
+deger=4
+den_sayısı=1
+tah_sayısı=0
+while True:
+    tah_sayısı=int(input("Aklımda tuttuğum sayıyı tahmin et bakalım..:"))
+
+    if tah_sayısı==deger:
+        print("Aferin bildin..SÜPERSİN....\n\n")
+        break
+    else:
+        if den_sayısı==5:
+            print("Üzgünüm kaybettiniz...\n5 deneme hakkın doldu")
+            den_sayısı+=1
+            break
+        else:
+            print("Olmadı Tekrar dene.. başarabilirsin...\n\n")
+        den_sayısı+=1
+if den_sayısı==1:
+    print("3 YILDIZ aldın   ***")
+if den_sayısı>1 and den_sayısı<4:
+    print("2 YILDIZ aldın   **")
+if den_sayısı>3 and den_sayısı<6:
+    print("1 YILDIZ aldın   *")
+
+       
