@@ -1,0 +1,75 @@
+bakiye=1000
+while True:
+    print("""
+    *************************
+    **  1-Bakiye kontrolü  **
+    **  2-Para yatırma     **
+    **  3-Para çekme       **
+    *************************""")
+    while True:#1,2,3 dışında bir tuşa basarsa işlem tekrar başa döner
+        secim=int(input("\nLütfen yukarıda yazılan işlemlerden hangi numaralı işlemi yapmak istiyorsanız o tuşa basınız...:"))
+        if secim!=1 and secim!=2 and secim!=3:
+            continue
+        else:
+            break
+#bakiye inceleme
+    if secim==1:
+        print("Hesabınızda",bakiye,"vardır")
+        devam=input("""
+    Devam etmek istiyormusunuz?
+    Evet (e) Tuşuna basınız
+    Hayır (h) Tuşuna basınız)""")
+        if devam=="e":
+            continue
+        elif devam=="h":
+            break
+        else:
+            devam=input("""
+    Devam etmek istiyormusunuz?
+    Evet (e Tuşuna basınız)
+    Hayır (h) Tuşuna basınız)""")
+
+#para yatırma
+    if secim==2:
+        ytpara=int(input("Lütfen yatırmak istediğiniz parayı yazın ve enter tuşuna basın..:"))
+        bakiye+=ytpara
+        print("Yeni bakiyeniz  :",bakiye)
+        
+        devam=input("""
+    Devam etmek istiyormusunuz?
+    Evet (e) Tuşuna basınız
+    Hayır (h) Tuşuna basınız)""")
+        if devam=="e":
+            continue
+        elif devam=="h":
+            break
+        else:
+            devam=input("""
+    Devam etmek istiyormusunuz?
+    Evet (e Tuşuna basınız)
+    Hayır (h) Tuşuna basınız)""")
+            
+# para çekme
+
+    if secim==3:
+         cekpara=int(input("Lütfen çekmek istediğiniz parayı yazın ve enter tuşuna basın..:"))
+         while cekpara>bakiye:
+             print("Hesabınızdan bu kadar para çekemezsiniz. Yazdığınız tutar bakiyenizden fazla...\n Tekrar deneyin...")
+             cekpara=int(input("Lütfen çekmek istediğiniz parayı yazın ve enter tuşuna basın..:"))
+         bakiye= (bakiye-cekpara)
+         print("Yeni bakiyeniz  :",bakiye)
+        
+         devam=input("""
+    Devam etmek istiyormusunuz?
+    Evet (e) Tuşuna basınız
+    Hayır (h) Tuşuna basınız)""")
+         if devam=="e":
+            continue
+         elif devam=="h":
+            print("işleminiz iptal edilmiştir..\nTekrar bekleriz")
+            break
+         else:
+            devam=input("""
+    Devam etmek istiyormusunuz?
+    Evet (e Tuşuna basınız)
+    Hayır (h) Tuşuna basınız)""")
