@@ -1,0 +1,62 @@
+# parola username doğrulama kontrol
+
+b_harfler=str("ABCDEFGHIİJKLMNOÖPRSŞTUÜVYWXZ")
+k_harfler=str("abcdefghıijklmnoöprsştuüvywxz")
+rakamlar=str("1234567890")
+
+while True:
+    isimkontrol=0 #isim doğru ise 0 yanlış ise 1 değerini alır
+    isim=str(input("\nlütfen içinde rakam olmayan 3-18 aralığında bir kullanıcı adı giriniz..:"))
+    for i in isim:
+         if i in rakamlar:
+             print("\nLütfen rakam girmeyiniz..:")
+             isimkontrol=1
+             break
+    if len(isim)<3:
+         print("\nKullanıcı adı 3 karakterden kısa olamaz")
+         isimkontrol=1
+    if len (isim)>18:
+         print("\nKullancı adı 18 karakterden büyük olamaz")
+         isimkontrol=1
+    if isimkontrol==1:
+        print("\nLütfen tekrar kullanıcı adı giriniz..")
+        continue
+
+    else:
+        print("\n***Tebrikler username başarılı bir şekilde tanımlandı***")
+        break    
+
+while True:
+    b=0 #büyük harf yoksa 0 varsa 1 değerini alır
+    k=0 #küçük harf yoksa 0 varsa 1 değerini alır
+    r=0 #rakam yoksa 0 varsa 1 değerini alır
+
+    prl=str(input("\nLütfen içinde en bir tane büyük harf, küçük harf ve rakam olan bir parola oluşturunuz  :"))
+    for i in prl:
+        if i in b_harfler:
+            b=1
+            break
+
+    for i in prl:
+        if i in k_harfler:
+            k=1
+            break
+    for i in prl:
+        if i in rakamlar:
+            r=1
+            break
+
+    if b==1 and k==1 and r==1:
+        print("\n***Tebrikler parolanız başarılı bir şekilde tamamlandı..***")
+        break
+    if b==0:
+        print("\nLütfen en az bir büyük harf giriniz..:")
+        
+    if k==0:
+        print("\nLütfen en az bir küçük harf giriniz..:")
+    if r==0:
+        print("\nLütfen en az bir rakam giriniz..:")
+isimdosya=open("isimparola.txt","w")
+print("Kullanıcı Adınız ...:",isim,"\nParolanız...........:",prl)
+print("Kullanıcı Adınız ...:",isim,"\nParolanız...........:",prl,file=isimdosya)
+isimdosya.close()
