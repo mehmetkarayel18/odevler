@@ -1,0 +1,66 @@
+# hangi burç dan olduğunu bulan bir program
+
+ay=int(input("Lütfen kaçıncı ayda doğduğunuzu sayı ile belirtiniz :"))
+gün=int(input("Lütfen kaçıncı günde doğduğunuzu sayı ile belirtiniz :"))
+sonuç=str(" l")
+
+if ay==1:
+    if gün>20:
+        sonuç="kova"
+    else:
+        sonuç="oğlak"
+if ay==2:
+    if gün>19:
+        sonuç="balık"
+    else:
+        sonuç="kova"
+if ay==3:
+    if gün>21:
+        sonuç="koç"
+    else:
+        sonuç="balık"
+if ay==4:
+    if gün>20:
+        sonuç="boğa"
+    else:
+        sonuç="koç"
+if ay==5:
+    if gün>21:
+        sonuç="ikizler"
+    else:
+        sonuç="boğa"
+if ay==6:
+    if gün>21:
+        sonuç="yengeç"
+    else:
+        sonuç="ikizler"
+if ay==7:
+    if gün>23:
+        sonuç="aslan"
+    else: sonuç="yengeç"
+if ay==8:
+    if gün>22:
+        sonuç="başak"
+    else:
+        sonuç="aslan"
+if ay==9:
+    if gün>22:
+        sonuç="terazi"
+    else:
+        sonuç="başak"
+if ay==10:
+    if gün>22:
+        sonuç="akrep"
+    else:
+        sonuç="terazi"
+if ay==11:
+    if gün>22:
+        sonuç="yay"
+    else:
+        sonuç="akrep"
+if ay==12:
+    if gün>21:
+        sonuç="oğlak"
+    else:
+        sonuç="yay"
+print("\n\nVerdiğiniz bilgilere göre siz ",sonuç," burcundansınız\n","*"*50,sep="")
