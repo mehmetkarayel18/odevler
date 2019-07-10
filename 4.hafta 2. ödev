@@ -1,0 +1,25 @@
+
+import locale
+locale.setlocale(locale.LC_ALL, "Turkish_Turkey.1254")  #Türkçe karakter
+b_harf="ABCDEFGĞHIİJKLMNOÖPRSŞTUÜWQVYZ"
+k_harf="abcdefgğhıijklmnoöpresştuüvwqyz"
+rakam="1234567890"
+bü_sayaç=0
+kü_sayaç=0
+r_sayaç=0
+simge=0
+devam=1
+yazı=input("Lütfen bir yazı yazınız....:")
+for i in yazı:
+    if i in b_harf:
+            bü_sayaç+=1
+    elif i in k_harf:
+            kü_sayaç+=1
+    elif i in rakam:
+            r_sayaç+=1
+    else:
+            simge+=1
+print("Yazdığınız yazıda...\n\n",bü_sayaç,"adet büyük harf\n",kü_sayaç,"adet küçük harf\n",
+      r_sayaç, "adet rakam\n",simge,"adet simge veya boşluk yer almaktadır\n")
+
+ 
