@@ -1,0 +1,22 @@
+liste=open("sesli harfle başlayan oyuncular.txt","w")
+isim=""
+b_harf="AEIİUÜOÖ"
+try:
+    with open("futbolcular.txt","r") as analiste:
+        analiste.seek(0)
+        satır=1
+        
+        while satır<71:
+            kisi=analiste.readline()        #futbolcu listesinde her bir satır sıra ile  okunacak
+    
+            if kisi[0] in b_harf:                   #her isim ilk harf incelenecek sesli harf mi bakılacak  
+                isim+=kisi              
+                isim+="\n"
+            satır+=1
+except FileNotFoundError:
+    print("Futbolcular listesi bulunamadı. bu sebeple işleminiz gerçekleşemedi..")
+liste.write(isim)
+liste.close()
+
+print("İşleminiz Gerçekleşti....Program kapanıyor....")
+
