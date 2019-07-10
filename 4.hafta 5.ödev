@@ -1,0 +1,22 @@
+import locale
+locale.setlocale(locale.LC_ALL, "Turkish_Turkey.1254")  #Türkçe karakter
+liste=open("Yeni futbolcu listesi.txt","w")
+
+tr_krkt="İıöşüğçÖŞÜĞÇ"
+yn_krkt="IiosugcOSUGC"
+try:
+    with open("futbolcular.txt","r") as analiste:
+        analiste.seek(0)
+        karakter=0
+        metin=analiste.read()        #futbolcu listesinde tamamı  okunacak
+        y_metin=metin
+        ceviri=str.maketrans(tr_krkt,yn_krkt)       #karakter dönüştürme anahtarı
+        y_metin=y_metin.translate(ceviri)
+        
+
+except FileNotFoundError:
+    print("Futbolcular listesi bulunamadı. bu sebeple işleminiz gerçekleşemedi..")
+liste.write(y_metin)
+liste.close()
+##
+print("İşleminiz Gerçekleşti....Program kapanıyor....")
