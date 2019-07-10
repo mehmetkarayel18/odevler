@@ -1,0 +1,12 @@
+import locale3      #türkçe karakterler tanımlanması için modül açılır
+locale.setlocale(locale.LC_ALL, "Turkish_Turkey.1254")
+toplam= int(0)
+rakam="1234567890"
+yazı=input("Lütfen bir yazı yazınız....:")
+for i in yazı:      #her bir karakter tek tek incelenir
+    if i in rakam:  #incelenen karakter eğer rakam ise o karakter seçilir
+       a=int(i)     #sıradaki karakter rakam ise onu int dönüştürüyoruz
+       toplam+= a
+##
+print("Yazınızdaki rakamların toplam değeri...:",toplam)
+
