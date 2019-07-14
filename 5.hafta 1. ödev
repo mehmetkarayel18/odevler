@@ -1,0 +1,99 @@
+kelime="hollanda"
+k_liste=["_","_","_","_","_","_","_","_"]       #oyunda oyuncunun gördüğü harf sırası
+asılıyor=0          #deneme hakkı
+
+## asılan adamın adım adım resmi
+adam_resmi6="""
+      ___
+      I  _o_
+      I     I
+      I    / \ """
+adam_resmi5="""
+      ___
+      I    o_
+      I     I
+      I    / \ """
+adam_resmi4="""
+      ___
+      I    o
+      I     I
+      I    / \ """
+adam_resmi3="""
+      ___
+      I    o
+      I     I
+      I    /  """
+adam_resmi2="""
+      ___
+      I    o
+      I     I
+      I        """
+adam_resmi1="""
+      ___
+      I    o
+      I     
+      I        """
+adam_resmi0="""
+      ___
+      I    
+      I     
+      I        """
+
+
+while True:
+
+##    oyuncunun bilemediği sayıya göre asılan adamın resmi değişiyor...
+    if asılıyor==0:
+        print(adam_resmi0)
+    elif asılıyor==1:
+        print(adam_resmi1)
+    elif asılıyor==2:
+        print(adam_resmi2)
+    elif asılıyor==3:
+        print(adam_resmi3)
+    elif asılıyor==4:
+        print(adam_resmi4)
+    elif asılıyor==5:
+        print(adam_resmi5)
+    elif asılıyor==6:
+        print(adam_resmi6)
+    
+    if k_liste.count("_")==0:                               #boş harf kalmaz ise oyun kazanılır
+        print("Tebrikler Oyunu Kazandınız...")
+        break
+    if k_liste.count("_")>0 and asılıyor==6:            #hakk biter ve boş harf kalır oyun kaybedilir
+        print("Üzgünüm Oyunu KAYBETTİNİZ.....")
+        print("""
+  ==        ==
+         II
+        ___
+      /        \ """) 
+
+        
+        break
+    print(*k_liste)
+    print(6-asılıyor,"hakkınız kaldı")
+
+    deneme=input("\nKelimeyi bulmak için bir harf deneyin...:")
+
+    if deneme in kelime:
+        sıra=0
+        for i in kelime:
+            
+            if i==deneme:
+            
+                k_liste[sıra]=deneme
+                print(k_liste)
+                sıra+=1
+                continue
+            else:
+                sıra+=1
+                continue
+        print("\nAferin")
+        continue
+
+    else:
+        print("\nÜzgünüm bu harf kelimede yok tekrar dene..")
+
+        asılıyor+=1
+        continue
