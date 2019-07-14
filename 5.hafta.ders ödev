@@ -1,0 +1,69 @@
+yapılacaklar=[]
+yapılanlar=[]
+while True:
+    boş="Şu an yapılacaklar listeniz boş"
+    print("""
+    1--Yapılacak Görevleri Düzenle
+    2--Görevden vazgeçme
+    3--Yapılan Görevler Listesi
+    4--Programdan Çıkma\n""")
+    if len(yapılacaklar)==0:
+        print("Görev listeniz boştur")
+    else:
+        print("Yapılacak görevler...:\n",end="")
+        for i in yapılacaklar:
+            print (yapılacaklar.index(i)+1,")   ",i)
+    if len(yapılanlar)==0:
+        print("Gerçekleşen görev yoktur")
+    else:
+        print("Gerçekleşen görevler...:\n",end="")
+        for i in yapılanlar:
+            print (yapılanlar.index(i)+1,")   ",i)
+
+    try:
+        secim=int(input("\nLütfen yapmak istediğiniz işlemin numarasını tuşlayınız...."))
+    except ValueError:
+        print("\n**----Lütfen işlem numarasını tuşlayınız.....")
+    
+    if secim==1:        #görev ekleme seçeneği
+        ekle=input("\nYapmak istediğiniz görevi ekleyiniz..")
+        yapılacaklar.append(ekle)
+        print("\nGörev yapılacaklar listesine eklenmiştir...")
+        continue
+    
+    elif secim==2:      #görev vazgeçme seçeneği
+        try:
+            sil_num=int(input("\nVazgeçmek istediğiniz işlemin numarasını seçiniz...:"))  #silmek istenilen görev numarası seçilir
+        except:
+            print("\n**----Lütfen doğru değer giriniz..")
+
+        if sil_num in range(1,len(yapılacaklar)+1):
+            del yapılacaklar[sil_num-1]
+            print("\nSeçtiğiniz işlem kalıcı olarak silinmiştir\n")
+            continue
+        else:
+            print("\n**----İşleminiz GERÇEKLEŞMEDİ\n")
+            continue
+
+    elif secim==3:  #görev gerçekleştirme, yapılanlar listesine ekleme
+        try:
+            sil_num=int(input("Yapılan işlemin numarasını seçiniz...:"))    #silmek istenilen görev numarası seçilir
+        except:
+            print("\n**----Lütfen doğru değer giriniz..")
+            continue
+        if sil_num in range(1,len(yapılacaklar)+1):
+            a=yapılacaklar.pop(sil_num-1)
+            yapılanlar.append(a)
+            print("\nSeçtiğiniz işlem yapılanlar listesine eklenmiştir")
+            continue
+        else:
+            print("\n**----İşleminiz GERÇEKLEŞMEDİ\n")
+            continue
+
+    elif secim==4:
+        break
+    else:
+        print("\n**-----Lütfen sizden istenen işlemi seçiniz")
+        continue
+
+
