@@ -1,0 +1,42 @@
+sayımız=3681
+
+print("Aklımdam 4 basamaklı 1-9 arasında farklı rakamlardan oluşan bir sayı tuttum...")
+while True:
+    psonuç=0        #pozitif değer
+    nsonuç=0        #negatif değer
+    try:
+        tahmin=int(input(" 4 basamaklı bir sayı söyle..."))
+        if 999 < tahmin < 10000 :
+                   pass
+        else:
+            print("lütfen 4 basamaklı bir sayı giriniz..\n")
+            continue
+    except ValueError:
+                   print("Lütfen sadece 4 basamaklı bir sayı söyle.")
+                   continue
+    tahmink=str(tahmin)   #karakter değerine dönüştürdük
+    sayımızk=str(sayımız)
+
+    for i in tahmink:
+        if i in sayımızk:
+            t_sıra=tahmink.index(i)
+            s_sıra=sayımızk.index(i)
+            if t_sıra==s_sıra:
+                psonuç+=1
+                continue
+            else:
+                nsonuç+=1
+                continue
+        else:
+            continue
+    if psonuç==4:
+        print("TEBRİKLER OYUNU KAZANDINIZ...")
+        break
+
+    print ("sonucunuz  \n+",psonuç,"\n- ",nsonuç,"\n\nTekrar deneyin ")
+    continue
+        
+
+               
+    
+           
